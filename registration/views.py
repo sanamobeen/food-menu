@@ -48,14 +48,14 @@ class LoginView(APIView):
                 access_token = str(refresh.access_token)
                 return JsonResponse(
                     {
-                        "msg": "Login successful",
+                        "msg": "Login successful!",
                         "tokens": {"refresh": str(refresh), "access": access_token},
                     },
                     status=status.HTTP_200_OK,
                 )
             else:
                 return Response(
-                    {"error": "Invalid email or password"},
+                    {"error": "Invalid email or password!"},
                     status=status.HTTP_401_UNAUTHORIZED,
                 )
 
